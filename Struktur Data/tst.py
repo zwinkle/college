@@ -13,27 +13,35 @@ class TSTNode:
 class TST:
     def __init__(self):
         self.root = None
+        self.insert_operations = 0
+        self.search_operations = 0
     
     def insert(self, key, value):
         self.root = self.insert_node(self.root, key, value, 0)
     
     def insert_node(self, node, key, value, index):
         if index >= len(key):
+            self.insert_operations += 1
             node.value = value
             return node
         
         c = key[index]
         
         if node is None:
+            self.insert_operations += 1
             node = TSTNode(c)
         
         if c < node.char:
+            self.insert_operations += 1
             node.left = self.insert_node(node.left, key, value, index)
         elif c > node.char:
+            self.insert_operations += 1
             node.right = self.insert_node(node.right, key, value, index)
         elif index < len(key) - 1:
+            self.insert_operations += 1
             node.middle = self.insert_node(node.middle, key, value, index + 1)
         else:
+            self.insert_operations += 1 
             node.value = value
         
         return node
@@ -43,20 +51,26 @@ class TST:
     
     def search_node(self, node, key, index):
         if node is None:
+            self.search_operations += 1
             return None
         
         if index >= len(key):
+            self.search_operations += 1
             return node
         
         c = key[index]
         
         if c < node.char:
+            self.search_operations += 1
             return self.search_node(node.left, key, index)
         elif c > node.char:
+            self.search_operations += 1
             return self.search_node(node.right, key, index)
         elif index < len(key) - 1:
+            self.search_operations += 1
             return self.search_node(node.middle, key, index + 1)
         else:
+            self.search_operations += 1
             return node
 
     def get_depth(self):
@@ -139,6 +153,10 @@ max_depth = tst.get_depth()
 # Mengatur kedalaman setiap node
 tst.set_depth()
 
+# Menghitung jumlah operasi pemasukan data dan pencarian data
+insert_operations = tst.insert_operations
+search_operations = tst.search_operations
+
 results = []
 
 # Mencari data pada TST
@@ -175,6 +193,8 @@ else:
 print("="*3, "HASIL", "="*3)
 print("\nANALISIS:")
 print("Kedalaman maksimum:", max_depth)
+print("Jumlah operasi pemasukan data:", insert_operations)
+print("Jumlah operasi pencarian data:", search_operations)
 print("Waktu mulai:", start_time)
 print("Waktu selesai:", end_time)
 total_time = round(end_time - start_time, 6)
