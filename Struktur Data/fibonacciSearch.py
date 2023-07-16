@@ -19,7 +19,7 @@ def fibonacci_search(arr, x):
     offset = -1  # Index offset
 
     # Searching by compare with offsett
-    print('='*15, 'DIKETAHUI','='*16)
+    print('='*15, 'INFO','='*16)
     while fib > 1:
         # Get index
         i = min(offset + fib2, len(arr) - 1)
@@ -27,8 +27,8 @@ def fibonacci_search(arr, x):
         print(f'Fib2 : {fib2}')
         print(f'Fib1 : {fib1}')
         print(f'Fib : {fib}')
-        print(f'Rumus : (Offset + Fib2, Panjang array - 1)')
-        print(f'Hasil : {offset + fib2, len(arr) - 1}')
+        print(f'Formula : (Offset + Fib2, Array length - 1)')
+        print(f'Result : {offset + fib2, len(arr) - 1}')
         print(f'Index : {i}\n')
 
         # If we got bigger element
