@@ -159,6 +159,11 @@ search_operations = tst.search_operations
 
 results = []
 
+# Fungsi untuk menghitung jumlah ID yang berhasil ditampilkan
+def count_displayed_ids(results):
+    count = len(results)
+    return count
+
 # Mencari data pada TST
 def search_tst(node, prefix, search_value):
     if node is None:
@@ -175,6 +180,9 @@ def search_tst(node, prefix, search_value):
     search_tst(node.right, prefix, search_value)
 
 search_tst(tst.root, '', search_value)
+
+# Menghitung jumlah ID yang berhasil ditampilkan
+count = count_displayed_ids(results)
 
 end_time = time.time()
 
@@ -193,6 +201,7 @@ else:
 print("="*3, "HASIL", "="*3)
 print("\nANALISIS:")
 print("Kedalaman maksimum:", max_depth)
+print("Jumlah data yang berhasil ditemukan:", count)
 print("Jumlah operasi pemasukan data:", insert_operations)
 print("Jumlah operasi pencarian data:", search_operations)
 print("Waktu mulai:", start_time)
