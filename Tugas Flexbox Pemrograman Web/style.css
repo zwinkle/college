@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Poppins';
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    padding: 0 2vw 0 2vw;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nama-situs {
+    width: auto;
+    color: black;
+    font-size: 2.1vw;
+    font-weight: bold;
+}
+
+.link-site {
+    display: flex;
+    width: auto;
+    align-items: center;
+}
+
+.logo {
+    width: 10%;
+    height: auto;
+}
+
+.menu-situs {
+    display: flex;
+    width: 30%;
+    font-weight: 600;
+    justify-content: space-around;
+    list-style: none;
+}
+.menu-situs li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1vw;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 120vh;
+    padding: 0 2vw 2vw 2vw;
+    flex-wrap: wrap;
+}
+
+.card-1 {
+    width: 50%;
+    height: 50%;
+    background-image: url("DSC04982.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.card-2 {
+    width: 50%;
+    height: 50%;
+    background-image: url("IMG_5295.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.card-3 {
+    width: 100%;
+    height: 50%;
+    background-image: url("IMG-20240406-WA0001.jpg");
+    background-size: cover;
+    background-position-y: center;
+}
+
+.kilas {
+    width: 100%;
+    margin-top: 2vw;
+    font-size: 1.5vw;
+    font-weight: 500;
+    text-align: center;
+}
