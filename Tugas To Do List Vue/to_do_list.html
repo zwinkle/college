@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Todo List with Vue</title>
+		<link rel="stylesheet" href="to_do_list.css" />
+	</head>
+	<body>
+		<div id="app">
+			<h1>Todo List</h1>
+			<!-- Input untuk menambahkan tugas baru -->
+			<input
+				type="text"
+				v-model="newTodo"
+				@keyup.enter="addTodo"
+				placeholder="Add a new task"
+			/>
+			<!-- Tampilkan daftar tugas -->
+			<ul>
+				<li v-for="(todo, index) in todos" :key="index">
+					{{ todo.text }}
+					<button class="delete" @click="removeTodo(index)">
+						Delete
+					</button>
+				</li>
+			</ul>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+		<script>
+			const app = new Vue({
+				el: "#app",
+				data: {
+					newTodo: "", // Untuk menampung input baru
+					todos: [
+						// Daftar tugas
+						{ text: "TASK 1" },
+						{ text: "TASK 2" },
+					],
+				},
+				methods: {
+					// Tambah tugas ke daftar
+					addTodo() {
+						if (this.newTodo.trim() !== "") {
+							this.todos.push({ text: this.newTodo });
+							this.newTodo = ""; // Kosongkan input setelah menambah tugas
+						}
+					},
+					// Hapus tugas berdasarkan indeks
+					removeTodo(index) {
+						this.todos.splice(index, 1); // Hapus tugas pada indeks tertentu
+					},
+				},
+			});
+		</script>
+	</body>
+</html>
