@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Component-Vue.js</title>
+		<link
+			href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			body {
+				margin: 5%;
+				font-family: "Quicksand", sans-serif;
+			}
+			nav a {
+				margin: 0 10px;
+				text-decoration: none;
+				color: #000;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<header>
+				<h1>What is Vue.js?</h1>
+				<p>The Progresif JavaScript Framework!!</p>
+				<nav>
+					<router-link to="/">Home</router-link>
+					<router-link to="/about">About</router-link>
+					<router-link to="/kelas">Kelas</router-link>
+				</nav>
+			</header>
+			<hr />
+			<router-view></router-view>
+			<hr />
+			<footer>
+				<p>Praktisi Mengajar-2024 | Vue.js</p>
+			</footer>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+		<script src="https://unpkg.com/vue-router@3.5.1/dist/vue-router.js"></script>
+		<script>
+			const Home = {
+				template: `<div><h2>Home Page</h2><p>Welcome to Vue!</p></div>`,
+			};
+
+			const About = {
+				template: `<div><h2>About Page</h2><p>Learn about Vue!</p></div>`,
+			};
+
+			const Kelas = {
+				template: `
+                    <div>
+                        <h2>Tambah Kelas</h2>
+                        <input
+                            type="text"
+                            placeholder="Nama Kelas"
+                            v-on:keyup.enter="tambahKelas"
+                            v-model="kelasBaru"
+                        />
+                        <h3>Daftar Kelas ({{ dataKelas.length }})</h3>
+                        <ul v-if="dataKelas.length">
+                            <li v-for="(item, index) in dataKelas" :key="index">
+                                {{ index + 1 }} - {{ item }}
+                                <a href="#" @click.prevent="hapusKelas(index)">hapus</a>
+                            </li>
+                        </ul>
+                        <p v-else>Kelase belum tersedia</p>
+                    </div>
+                    `,
+				data() {
+					return {
+						dataKelas: ["PHP", "HTML CSS"],
+						kelasBaru: "",
+					};
+				},
+				methods: {
+					tambahKelas() {
+						if (this.kelasBaru) {
+							this.dataKelas.unshift(this.kelasBaru);
+							this.kelasBaru = "";
+						}
+					},
+					hapusKelas(index) {
+						this.dataKelas.splice(index, 1);
+					},
+				},
+			};
+
+			const routes = [
+				{ path: "/", component: Home },
+				{ path: "/about", component: About },
+				{ path: "/kelas", component: Kelas },
+			];
+
+			const router = new VueRouter({
+				routes,
+			});
+
+			new Vue({
+				el: "#app",
+				router,
+			});
+		</script>
+	</body>
+</html>
