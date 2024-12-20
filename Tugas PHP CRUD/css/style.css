@@ -1,0 +1,260 @@
+/* Tambahkan pada Baris terakhir style.css*/ 
+.tombol {
+    display: inline-block; 
+    padding: 14px 15px; 
+    color: white; 
+    cursor: pointer; 
+    text-align: center; 
+    text-decoration: none; 
+} 
+.tombol.edit { 
+    background-color: #038ade; 
+} 
+.tombol.hapus { 
+    background-color: #f44336; 
+} 
+
+/* Mengatur box-sizing untuk semua elemen */
+* {
+    box-sizing: border-box;
+}
+
+/* Mengatur font dan background */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: #555;
+}
+
+/* Membuat container menjadi flexbox dan kotak login berada di tengah */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Mengatur ukuran kotak login dan background */
+.loginbox {
+    margin: 150px 0 0 0;
+    flex-basis: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Mengatur posisi judul halaman Login */
+.loginbox h2 {
+    border-bottom: 1px solid #cccccc;
+    color: #555;
+    text-align: center;
+    padding-bottom: 10px;
+    margin: 0 0 20px;
+}
+
+/* Mengatur agar box input dan select memenuhi ukuran form */
+input,
+select {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 8px 0;
+    border: 1px solid #cccccc;
+    border-radius: 5px; /* Tambahkan agar tampilan lebih menarik */
+}
+
+/* Mengatur tampilan tombol submit */
+input[type="submit"] {
+    background-color: #038ade;
+    border: none;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px; /* Tambahkan untuk sudut tombol yang lebih halus */
+}
+
+/* Mengatur warna tombol submit ketika ada cursor */
+input[type="submit"]:hover {
+    background-color: #025487;
+}
+/* =========================================== */
+/* Mengatur CSS Grid */
+/* =========================================== */
+
+/* Grid untuk Navbar */
+.grid-navbar {
+    grid-area: header;
+    background: #25476a;
+    color: #fff;
+    height: 70px;
+}
+
+/* Grid untuk Sidebar */
+.grid-sidebar {
+    grid-area: sidebar;
+    background: #fff;
+    padding: 20px;
+    align-items: center;
+    height: 100%;
+}
+
+/* Grid untuk Top Header */
+.grid-head {
+    grid-area: topheader;
+    background: #25476a;
+    color: #fff;
+    text-align: center;
+    padding-top: 30px;
+    margin: 0;
+    height: 150px;
+}
+
+/* Grid untuk Content */
+.grid-content {
+    grid-area: main;
+    background: #fff;
+    padding: 20px;
+    height: 100vh;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "header header header header header header"
+        "sidebar topheader topheader topheader topheader topheader"
+        "sidebar main main main main main";
+    width: 100vw;
+    height: 100vh;
+}
+
+/* =========================================== */
+/* Akhir Mengatur CSS Grid */
+/* =========================================== */
+
+/* Membuat Header Sistem Akademik berada di kiri */
+.navbarheader {
+    padding: 20px;
+    display: block;
+    float: left;
+    font-size: 19px;
+}
+
+/* Membuat Menu Logout berada di sebelah kanan */
+.logout {
+    padding: 20px;
+    text-align: right;
+    color: #fff;
+}
+
+.logout a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.783);
+}
+
+/* Pengaturan untuk gambar profile */
+.profilepic {
+    text-align: center;
+}
+
+/* Membuat border bundar untuk gambar profile */
+.imground {
+    border-radius: 50%;
+    width: 80px;
+}
+
+/* Pengaturan untuk menu navigasi */
+.navigation {
+    padding-top: 20px;
+    border-top: 1px solid #cccccc;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #656565;
+}
+
+.navigation a:hover {
+    text-decoration: none;
+    color: #000000;
+}
+
+.navigation ul {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.navigation .active {
+    color: #fff;
+    background-color: #25476a;
+    border-radius: 3px;
+    padding: 10px 50px 10px 10px;
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+}
+
+/* Pengaturan untuk judul konten */
+.judul {
+    font-weight: 600;
+    border-bottom: 1px solid #cccccc;
+}
+/* Form */
+.formgroup {
+    clear: both;
+    margin-bottom: 20px;
+  }
+  
+  /* Mengatur posisi label */
+  .formgroup label {
+    display: block;
+    padding: 10px 0;
+    float: left;
+    width: 30%;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 10px;
+  }
+  
+  /* Mengatur posisi input */
+  .formgroup input {
+    display: block;
+    width: 60%;
+    float: left;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .table th, .table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .table tr:hover {
+    background-color: #f1f1f1;
+  }
+  

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halaman Admin</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="grid-container">
+      <!-- Navbar -->
+      <div class="grid-navbar">
+        <div class="navbarheader">Sistem Akademik</div>
+        <div class="logout"><a href="#">Logout</a></div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="grid-sidebar">
+        <div class="profilepic">
+          <img
+            src="images/profile.png"
+            alt="Profile Picture"
+            class="imground"
+          />
+          <p>Arif Setiawan</p>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="#" class="active">Dashboard</a></li>
+            <li><a href="http://">KRS</a></li>
+            <li><a href="http://">KHS</a></li>
+            <li><a href="http://">Edit Profile</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Header -->
+      <div class="grid-head">
+        <h2>Selamat Datang di Sistem Akademik</h2>
+        <p>Sistem Informasi Akademik Campus Terintegrasi</p>
+      </div>
+
+      <!-- Content -->
+
+      <div class="grid-content">
+        <h2 class="judul">Edit Profil</h2>
+        <div class="profilepic">
+          <img
+            src="images/profile.png"
+            alt="Profile Picture"
+            class="imground"
+          />
+          <p>Arif Setiawan</p>
+        </div>
+        <form action="" method="POST">
+          <div class="formgroup">
+            <label for="foto">Foto</label>
+            <div class="input">
+              <input type="file" name="foto" id="foto" />
+            </div>
+          </div>
+          <div class="formgroup">
+            <label for="nama">Nama</label>
+            <div class="input">
+              <input type="text" name="nama" id="nama" />
+            </div>
+          </div>
+          <div class="formgroup">
+            <label for="password">Password</label>
+            <div class="input">
+              <input type="password" name="password" id="password" />
+            </div>
+          </div>
+          <div class="formgroup">
+            <input type="submit" value="Simpan" class="tmbSimpan" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
